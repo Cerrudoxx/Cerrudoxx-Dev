@@ -356,6 +356,7 @@ const translations = {
     // Publications
     'pub.title': 'Publicaciones',
     'pub.desc': 'Investigación sobre el rendimiento de simuladores de vectores de estado en entornos de computación de alto rendimiento (HPC).',
+    'pub.scholar': 'Ver en Google Scholar',
 
     // Contact
     'contact.eyebrow': 'Contacto',
@@ -470,6 +471,7 @@ const translations = {
     // Publications
     'pub.title': 'Publications',
     'pub.desc': 'Research on the performance of statevector simulators in high-performance computing (HPC) environments.',
+    'pub.scholar': 'View on Google Scholar',
 
     // Contact
     'contact.eyebrow': 'Contact',
