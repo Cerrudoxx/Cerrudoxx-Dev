@@ -2,8 +2,7 @@
  * CERRUDO2 — Enhanced Portfolio JavaScript
  * ──────────────────────────────────────────────
  * Features:
- *  1. Animated canvas background (Constellations)
- *     — Adapted from Odysseus UI (theme.js)
+ *  1. Animated background via tsParticles (CDN)
  *  2. i18n (ES ↔ EN) full translations from CV
  *  3. Scroll-triggered domino reveal animations
  *  4. Nav scroll effects + active link
@@ -13,248 +12,13 @@
  * ============================================ */
 
 // ═══════════════════════════════════════════════
-// 1. ANIMATED BACKGROUND — Constellations Effect
-//    Adapted from Odysseus (theme.js lines 1664-1758)
-//    This creates a network of drifting, twinkling
-//    particles connected by proximity lines.
+// 1. ANIMATED BACKGROUND — tsParticles
+//    Initialized from DOMContentLoaded.
+//    Config: drifting particles with connecting lines,
+//    color-matched to the site palette.
+//    To customize: edit the tsParticles.load() config below
+//    in the INIT section.
 // ═══════════════════════════════════════════════
-//
-// HOW TO CUSTOMIZE:
-//   - STAR_COUNT: Number of particles (default: 60).
-//     More = denser. For mobile, we auto-reduce.
-//   - CONNECT_DIST: Max distance to draw a line
-//     between two particles (default: 140px).
-//   - Star color: Uses CSS variable --fg (cyan #9cdef2).
-//     Change --fg in style.css to change particle color.
-//   - Opacity: Controlled by --bg-effect-intensity in CSS
-//     (default 0.6). Set to 0 to hide, 1 for full.
-//   - Speed: Adjust vx/vy multiplier (default: 0.18).
-//
-// HOW TO SWITCH TO A DIFFERENT EFFECT:
-//   Replace the initConstellations() call in the DOMContentLoaded
-//   listener with one of the alternative effects below:
-//     - initConstellations()  → Slow drifting particle network
-//     - initRain()            → Falling vertical streaks
-//     - initSparkles()        → Twinkling 4-pointed stars
-//   All effects use the same <canvas id="bg-canvas"> element.
-// ═══════════════════════════════════════════════
-
-function initConstellations() {
-  const canvas = document.getElementById('bg-canvas');
-  if (!canvas) return;
-  const ctx = canvas.getContext('2d');
-  const dpr = Math.min(window.devicePixelRatio || 1, 2);
-
-  // Parameters — tune these!
-  const isMobile = window.innerWidth < 600;
-  const STAR_COUNT = isMobile ? 30 : 60;
-  const CONNECT_DIST = isMobile ? 100 : 140;
-  const SPEED = 0.18;
-
-  let W, H;
-  let stars = [];
-
-  function resize() {
-    W = window.innerWidth;
-    H = window.innerHeight;
-    canvas.width = W * dpr;
-    canvas.height = H * dpr;
-    ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
-  }
-
-  function initStars() {
-    stars = [];
-    for (let i = 0; i < STAR_COUNT; i++) {
-      stars.push({
-        x: Math.random() * W,
-        y: Math.random() * H,
-        vx: (Math.random() - 0.5) * SPEED,
-        vy: (Math.random() - 0.5) * SPEED,
-        r: 0.8 + Math.random() * 1.0,
-        phase: Math.random() * Math.PI * 2,
-      });
-    }
-  }
-
-  resize();
-  initStars();
-
-  window.addEventListener('resize', () => { resize(); initStars(); });
-
-  // Read color from CSS variable (reactive to theme changes)
-  function getColor() {
-    const s = getComputedStyle(document.documentElement);
-    return s.getPropertyValue('--fg').trim() || '#9cdef2';
-  }
-
-  let t = 0;
-  function draw() {
-    requestAnimationFrame(draw);
-    t += 0.008;
-    ctx.clearRect(0, 0, W, H);
-    const c = getColor();
-
-    // Move particles (wrap at edges)
-    for (const s of stars) {
-      s.x += s.vx;
-      s.y += s.vy;
-      if (s.x < 0) s.x = W;
-      if (s.x > W) s.x = 0;
-      if (s.y < 0) s.y = H;
-      if (s.y > H) s.y = 0;
-    }
-
-    // Draw connecting lines between nearby particles
-    ctx.strokeStyle = c;
-    ctx.lineWidth = 0.5;
-    for (let i = 0; i < stars.length; i++) {
-      for (let j = i + 1; j < stars.length; j++) {
-        const dx = stars[i].x - stars[j].x;
-        const dy = stars[i].y - stars[j].y;
-        const dist = Math.sqrt(dx * dx + dy * dy);
-        if (dist < CONNECT_DIST) {
-          ctx.globalAlpha = (1 - dist / CONNECT_DIST) * 0.18;
-          ctx.beginPath();
-          ctx.moveTo(stars[i].x, stars[i].y);
-          ctx.lineTo(stars[j].x, stars[j].y);
-          ctx.stroke();
-        }
-      }
-    }
-
-    // Draw particles with twinkle
-    ctx.fillStyle = c;
-    for (const s of stars) {
-      const twinkle = 0.5 + 0.5 * Math.sin(t * 2 + s.phase);
-      ctx.globalAlpha = 0.2 + twinkle * 0.3;
-      ctx.beginPath();
-      ctx.arc(s.x, s.y, s.r, 0, Math.PI * 2);
-      ctx.fill();
-    }
-    ctx.globalAlpha = 1;
-  }
-  draw();
-}
-
-// ── Alternative: Rain Effect ──
-// Uncomment and call initRain() instead of initConstellations()
-function initRain() {
-  const canvas = document.getElementById('bg-canvas');
-  if (!canvas) return;
-  const ctx = canvas.getContext('2d');
-  const dpr = Math.min(window.devicePixelRatio || 1, 2);
-  let W, H;
-  const DROP_COUNT = 80;
-  let drops = [];
-
-  function resize() {
-    W = window.innerWidth; H = window.innerHeight;
-    canvas.width = W * dpr; canvas.height = H * dpr;
-    ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
-  }
-  function initDrops() {
-    drops = [];
-    for (let i = 0; i < DROP_COUNT; i++) {
-      drops.push({
-        x: Math.random() * W,
-        y: Math.random() * H,
-        speed: 1 + Math.random() * 2.5,
-        len: 10 + Math.random() * 25,
-        alpha: 0.03 + Math.random() * 0.08,
-      });
-    }
-  }
-  resize(); initDrops();
-  window.addEventListener('resize', () => { resize(); initDrops(); });
-
-  function getColor() {
-    return getComputedStyle(document.documentElement).getPropertyValue('--fg').trim() || '#9cdef2';
-  }
-
-  function draw() {
-    requestAnimationFrame(draw);
-    ctx.clearRect(0, 0, W, H);
-    const c = getColor();
-    ctx.strokeStyle = c;
-    ctx.lineWidth = 1;
-    for (const d of drops) {
-      ctx.globalAlpha = d.alpha;
-      ctx.beginPath();
-      ctx.moveTo(d.x, d.y);
-      ctx.lineTo(d.x, d.y + d.len);
-      ctx.stroke();
-      d.y += d.speed;
-      if (d.y > H + d.len) { d.y = -d.len; d.x = Math.random() * W; }
-    }
-    ctx.globalAlpha = 1;
-  }
-  draw();
-}
-
-// ── Alternative: Sparkles Effect ──
-function initSparkles() {
-  const canvas = document.getElementById('bg-canvas');
-  if (!canvas) return;
-  const ctx = canvas.getContext('2d');
-  const dpr = Math.min(window.devicePixelRatio || 1, 2);
-  let W, H;
-  const COUNT = 40;
-  let sparkles = [];
-
-  function resize() {
-    W = window.innerWidth; H = window.innerHeight;
-    canvas.width = W * dpr; canvas.height = H * dpr;
-    ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
-  }
-  function initSparkleParticles() {
-    sparkles = [];
-    for (let i = 0; i < COUNT; i++) {
-      sparkles.push({
-        x: Math.random() * W, y: Math.random() * H,
-        size: 2 + Math.random() * 4,
-        phase: Math.random() * Math.PI * 2,
-        speed: 0.5 + Math.random() * 1.5,
-      });
-    }
-  }
-  resize(); initSparkleParticles();
-  window.addEventListener('resize', () => { resize(); initSparkleParticles(); });
-
-  function getColor() {
-    return getComputedStyle(document.documentElement).getPropertyValue('--fg').trim() || '#9cdef2';
-  }
-
-  let t = 0;
-  function draw() {
-    requestAnimationFrame(draw);
-    t += 0.015;
-    ctx.clearRect(0, 0, W, H);
-    const c = getColor();
-    ctx.fillStyle = c;
-    for (const s of sparkles) {
-      const twinkle = Math.max(0, Math.sin(t * s.speed + s.phase));
-      ctx.globalAlpha = twinkle * 0.35;
-      // 4-pointed star
-      const sz = s.size * twinkle;
-      ctx.beginPath();
-      ctx.moveTo(s.x, s.y - sz);
-      ctx.lineTo(s.x + sz * 0.3, s.y);
-      ctx.lineTo(s.x, s.y + sz);
-      ctx.lineTo(s.x - sz * 0.3, s.y);
-      ctx.closePath();
-      ctx.fill();
-      ctx.beginPath();
-      ctx.moveTo(s.x - sz, s.y);
-      ctx.lineTo(s.x, s.y + sz * 0.3);
-      ctx.lineTo(s.x + sz, s.y);
-      ctx.lineTo(s.x, s.y - sz * 0.3);
-      ctx.closePath();
-      ctx.fill();
-    }
-    ctx.globalAlpha = 1;
-  }
-  draw();
-}
 
 
 // ═══════════════════════════════════════════════
@@ -621,6 +385,7 @@ document.addEventListener('click', e => {
 });
 
 
+
 // ═══════════════════════════════════════════════
 // 7. INIT
 // ═══════════════════════════════════════════════
@@ -632,11 +397,42 @@ document.addEventListener('DOMContentLoaded', () => {
     if (saved && translations[saved]) setLang(saved);
   } catch (_) {}
 
-  // Start animated background
-  // Change this to initRain() or initSparkles() for a different effect
-  initConstellations();
-  //initRain();
-  //initSparkles();
+  // Animated background via tsParticles (library loaded via CDN in index.html)
+  // To customize the effect, edit the config object below.
+  tsParticles.load('tsparticles', {
+    fullScreen: { enable: false },
+    background: { color: { value: 'transparent' } },
+    fpsLimit: 60,
+    particles: {
+      number: { value: window.innerWidth < 600 ? 35 : 70, density: { enable: true } },
+      color: { value: ['#9cdef2', '#e06c75', '#f0ad4e'] },
+      links: {
+        enable: true,
+        distance: 140,
+        color: '#355a66',
+        opacity: 0.25,
+        width: 1
+      },
+      move: {
+        enable: true, speed: 0.5,
+        direction: 'none', random: true, straight: false,
+        outModes: { default: 'bounce' }
+      },
+      opacity: { value: { min: 0.2, max: 0.7 }, animation: { enable: true, speed: 0.6, sync: false } },
+      size: { value: { min: 1, max: 2.5 } },
+      shape: { type: 'circle' }
+    },
+    interactivity: {
+      events: {
+        onHover: { enable: true, mode: 'grab' },
+        onClick: { enable: false }
+      },
+      modes: {
+        grab: { distance: 160, links: { opacity: 0.6 } }
+      }
+    },
+    detectRetina: true
+  });
 
   initScrollReveal();
   initTimelineReveal();
@@ -645,10 +441,18 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 
 // ═══════════════════════════════════════════════
-// 8. TERMINAL ANIMATION
+// 8. TERMINAL ANIMATION (with click-to-replay)
 // ═══════════════════════════════════════════════
 
-function initTerminalAnimation() {
+/**
+ * Runs the typing animation inside the terminal card.
+ * If `replayMode` is true, skips the IntersectionObserver and plays immediately.
+ * HOW TO CUSTOMIZE:
+ *   - Edit the `steps` array to add/remove terminal commands and outputs.
+ *   - Each step has a `type` ('input' or 'output') and either `text` (string typed
+ *     char by char) or `html`/`htmlEs`/`htmlEn` for bilingual colored output.
+ */
+function initTerminalAnimation(replayMode = false) {
   const termPre = document.querySelector('.term pre');
   if (!termPre) return;
 
@@ -671,70 +475,90 @@ function initTerminalAnimation() {
     { type: 'output', html: '<span class="val">Quantum Computing × HPC Optimization</span>\n' }
   ];
 
+  function playAnimation() {
+    termPre.innerHTML = '';
+    
+    let cursorSpan = document.createElement('span');
+    cursorSpan.className = 'cursor';
+    cursorSpan.innerHTML = '▌';
+    termPre.appendChild(cursorSpan);
+    
+    let currentStep = 0;
+
+    function runStep() {
+      if (currentStep >= steps.length) {
+        const promptSpan = document.createElement('span');
+        promptSpan.className = 'prompt';
+        promptSpan.innerHTML = '$ ';
+        termPre.insertBefore(promptSpan, cursorSpan);
+        return;
+      }
+
+      const step = steps[currentStep];
+
+      if (step.type === 'input') {
+        const promptSpan = document.createElement('span');
+        promptSpan.className = 'prompt';
+        promptSpan.innerHTML = '$ ';
+        termPre.insertBefore(promptSpan, cursorSpan);
+        
+        const textNode = document.createTextNode('');
+        termPre.insertBefore(textNode, cursorSpan);
+        
+        let i = 0;
+        function typeChar() {
+          if (i < step.text.length) {
+            textNode.nodeValue += step.text.charAt(i);
+            i++;
+            setTimeout(typeChar, 40 + Math.random() * 50);
+          } else {
+            const br = document.createTextNode('\n');
+            termPre.insertBefore(br, cursorSpan);
+            currentStep++;
+            setTimeout(runStep, 150);
+          }
+        }
+        setTimeout(typeChar, 250);
+      } else if (step.type === 'output') {
+        const wrapper = document.createElement('span');
+        const content = currentLang === 'es' ? (step.htmlEs || step.html) : (step.htmlEn || step.html);
+        wrapper.innerHTML = content;
+        termPre.insertBefore(wrapper, cursorSpan);
+        currentStep++;
+        setTimeout(runStep, 350);
+      }
+    }
+
+    setTimeout(runStep, 600);
+  }
+
+  if (replayMode) {
+    playAnimation();
+    return;
+  }
+
   let hasRun = false;
   const termContainer = document.querySelector('.term');
+
+  // Click to replay
+  if (termContainer) {
+    termContainer.addEventListener('click', () => {
+      if (hasRun) playAnimation();
+    });
+  }
 
   const observer = new IntersectionObserver((entries) => {
     if (entries[0].isIntersecting && !hasRun) {
       hasRun = true;
-      // Clear static content
-      termPre.innerHTML = '';
-      
-      let cursorSpan = document.createElement('span');
-      cursorSpan.className = 'cursor';
-      cursorSpan.innerHTML = '▌';
-      termPre.appendChild(cursorSpan);
-      
-      let currentStep = 0;
-
-      function runStep() {
-        if (currentStep >= steps.length) {
-          const promptSpan = document.createElement('span');
-          promptSpan.className = 'prompt';
-          promptSpan.innerHTML = '$ ';
-          termPre.insertBefore(promptSpan, cursorSpan);
-          return;
-        }
-
-        const step = steps[currentStep];
-
-        if (step.type === 'input') {
-          const promptSpan = document.createElement('span');
-          promptSpan.className = 'prompt';
-          promptSpan.innerHTML = '$ ';
-          termPre.insertBefore(promptSpan, cursorSpan);
-          
-          const textNode = document.createTextNode('');
-          termPre.insertBefore(textNode, cursorSpan);
-          
-          let i = 0;
-          function typeChar() {
-            if (i < step.text.length) {
-              textNode.nodeValue += step.text.charAt(i);
-              i++;
-              setTimeout(typeChar, 40 + Math.random() * 50);
-            } else {
-              const br = document.createTextNode('\n');
-              termPre.insertBefore(br, cursorSpan);
-              currentStep++;
-              setTimeout(runStep, 150);
-            }
-          }
-          setTimeout(typeChar, 250);
-        } else if (step.type === 'output') {
-          const wrapper = document.createElement('span');
-          const content = currentLang === 'es' ? (step.htmlEs || step.html) : (step.htmlEn || step.html);
-          wrapper.innerHTML = content;
-          termPre.insertBefore(wrapper, cursorSpan);
-          currentStep++;
-          setTimeout(runStep, 350);
-        }
-      }
-
-      setTimeout(runStep, 600);
+      playAnimation();
       observer.disconnect();
     }
   }, { threshold: 0.5 });
   
-  observer.observe(termContainer);
+  if (termContainer) observer.observe(termContainer);
 }
+
+
+
+
+
