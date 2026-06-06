@@ -368,6 +368,10 @@ const translations = {
     'contact.form.message': 'Mensaje',
     'contact.form.send': 'Enviar',
 
+    // Terminal
+    'terminal.whoami': '# Jesús Cerrudo Herrera — Ingeniero Informático',
+    'terminal.role': 'Técnico de I+D @ Fundación COMPUTAEX',
+
     // Footer
     'footer.rights': 'Todos los derechos reservados.',
   },
@@ -477,6 +481,10 @@ const translations = {
     'contact.form.email': 'Email',
     'contact.form.message': 'Message',
     'contact.form.send': 'Send',
+
+    // Terminal
+    'terminal.whoami': '# Jesús Cerrudo Herrera — Computer Engineer',
+    'terminal.role': 'R&D Technician @ Fundación COMPUTAEX',
 
     // Footer
     'footer.rights': 'All rights reserved.',
@@ -644,9 +652,17 @@ function initTerminalAnimation() {
 
   const steps = [
     { type: 'input', text: 'whoami' },
-    { type: 'output', html: '<span class="comment"># Jesús Cerrudo Herrera — Ingeniero Informático</span>\n' },
+    { 
+      type: 'output', 
+      htmlEs: '<span class="comment" data-i18n="terminal.whoami"># Jesús Cerrudo Herrera — Ingeniero Informático</span>\n',
+      htmlEn: '<span class="comment" data-i18n="terminal.whoami"># Jesús Cerrudo Herrera — Computer Engineer</span>\n'
+    },
     { type: 'input', text: 'cat /etc/hpc/role' },
-    { type: 'output', html: '<span class="val">Técnico de I+D @ Fundación COMPUTAEX</span>\n' },
+    { 
+      type: 'output', 
+      htmlEs: '<span class="val" data-i18n="terminal.role">Técnico de I+D @ Fundación COMPUTAEX</span>\n',
+      htmlEn: '<span class="val" data-i18n="terminal.role">R&D Technician @ Fundación COMPUTAEX</span>\n'
+    },
     { type: 'input', text: 'squeue --user=jcerrudo | head -3' },
     { type: 'output', html: '<span class="comment"># JOBID  PARTITION  NAME       STATE   NODES\n# 42195  quantum    vqe_bench  RUNNING 8</span>\n' },
     { type: 'input', text: 'echo $RESEARCH_FOCUS' },
@@ -705,7 +721,8 @@ function initTerminalAnimation() {
           setTimeout(typeChar, 250);
         } else if (step.type === 'output') {
           const wrapper = document.createElement('span');
-          wrapper.innerHTML = step.html;
+          const content = currentLang === 'es' ? (step.htmlEs || step.html) : (step.htmlEn || step.html);
+          wrapper.innerHTML = content;
           termPre.insertBefore(wrapper, cursorSpan);
           currentStep++;
           setTimeout(runStep, 350);
