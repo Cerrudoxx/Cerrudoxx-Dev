@@ -1,725 +1,293 @@
 <!DOCTYPE html>
-<html lang="es">
-<head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Jesús Cerrudo Herrera — Ingeniero en Informática y Técnico de I+D+i en Computación Cuántica y Supercomputación en Fundación COMPUTAEX.">
-  <meta name="author" content="Jesús Cerrudo Herrera">
-  <title>Jesús Cerrudo Herrera — Ingeniero en Informática</title>
-  
-  <link rel="icon" href="assets/logo-jc-red-tight.png" type="image/png">
-  <link rel="stylesheet" href="style.css">
-  
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-</head>
-<body>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<title>cerrudoxx — Jesús Cerrudo Herrera</title>
+		<meta name="description" content="Jesús Cerrudo Herrera (cerrudoxx) — Computer Engineer, R&D Technical Researcher in Quantum Computing & Supercomputing at COMPUTAEX Foundation.">
+		<meta name="author" content="Jesús Cerrudo Herrera">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<link rel="icon" type="image/png" href="assets/logo-jc-red-tight.png">
+		<link rel="stylesheet" type="text/css" href="style.css"/>
+		<meta name="twitter:card" content="summary">
+		<meta name="twitter:site" content="@Cerrudoxx">
+		<meta name="twitter:title" content="cerrudoxx">
+		<meta name="twitter:description" content="Supercomputing & Quantum Computing (Lusitania / COMPUTAEX)">
+	</head>
+	<body>
+		<!--
+			Press 'f' to toggle fullscreen
+		-->
+		<main class="invisible">
+			<!-- Top ASCII Art Banner: Jesús Cerrudo -->
+			<div class="ascii-banner full-width" data-raw="true"></div>
 
-  <!-- ══════════════════════════════════════════
-       BARRA DE NAVEGACIÓN
-       ══════════════════════════════════════════ -->
-  <nav id="navbar">
-    <div class="wrap nav-layout">
-      <a href="#hero" class="brand-unit">
-        <div class="brand-symbol">
-          <img src="assets/logo-jc-red-tight.png" alt="Jesús Cerrudo">
-        </div>
-        <span class="brand-title">Jesús Cerrudo Herrera</span>
-      </a>
+			<!-- Box 01: Identity & Profile -->
+			<div class="box content-box" data-box="true" data-title="01 · IDENTITY & PROFILE">
+				Jesús Cerrudo Herrera<br>
+				Cáceres · Extremadura · Spain<br>
+				<br>
+				B.S. in Computer Engineering (University of Extremadura · UEx)<br>
+				R&D Technical Researcher in Supercomputing & Quantum Computing<br>
+				M.S. in Computer Engineering Student (UNED)<br>
+				<br>
+				Specialization: HPC & Quantum Computing
+			</div>
 
-      <div class="nav-links">
-        <a href="#hero" class="nav-link" data-i18n="nav.about">Sobre mí</a>
-        <a href="#experience" class="nav-link" data-i18n="nav.experience">Experiencia</a>
-        <a href="#projects" class="nav-link" data-i18n="nav.projects">Proyectos</a>
-        <a href="#publication" class="nav-link" data-i18n="nav.pub">Publicaciones</a>
-        <a href="#education" class="nav-link" data-i18n="nav.education">Formación</a>
-        <a href="#skills" class="nav-link" data-i18n="nav.skills">Habilidades</a>
-        <a href="#contact" class="nav-link" data-i18n="nav.contact">Contacto</a>
-      </div>
+			<!-- Box 02: Scientific Publications -->
+			<div class="box content-box" data-box="true" data-title="02 · SCIENTIFIC PUBLICATIONS">
+				[JCR JOURNAL 2026] SIMULATION (SAGE Publications)<br>
+				"Benchmarking quantum computing statevector simulators on HPC systems"<br>
+				<a target="_blank" href="https://doi.org/10.1177/00375497261438515">DOI SAGE: 10.1177/00375497261438515</a><br>
+				<br>
+				[CONFERENCE 2026] JISBD 2026 Proceedings (Sistedes · Alicante)<br>
+				"Benchmarking de Simuladores Cuánticos de Vector de Estado en HPC"<br>
+				<a target="_blank" href="https://hdl.handle.net/11705/JISBD/2026/104">Handle Sistedes: 11705/JISBD/2026/104</a>
+			</div>
 
-      <div class="nav-controls">
-        <div class="lang-toggle" aria-label="Cambiar idioma">
-          <button id="lang-es" class="active" onclick="setLang('es')">ES</button>
-          <button id="lang-en" onclick="setLang('en')">EN</button>
-        </div>
+			<!-- Box 03: Experience & Projects -->
+			<div class="box content-box" data-box="true" data-title="03 · EXPERIENCE & PROJECTS">
+				• R&D Technical Researcher (Mar 2026 - Present) · COMPUTAEX<br>
+				  Research in HPC, QAOA, VQE, QUBO and quantum simulation.<br>
+				• Research Fellow (Abr 2025 - Mar 2026) · COMPUTAEX<br>
+				  Benchmarking Qiskit, Qulacs, Qibo, Cirq, distributed IQS.<br>
+				• Curricular Internship (Feb 2025 - Apr 2025) · COMPUTAEX<br>
+				<br>
+				OPEN SOURCE PROJECTS:<br>
+				• <a target="_blank" href="https://github.com/Cerrudoxx/ComputaexQuantumBenchmark">ComputaexQuantumBenchmark</a><br>
+				• <a target="_blank" href="https://github.com/Cerrudoxx/Entanglement-Agnostic-DEGGA">DEGGA CUNQA</a>
+			</div>
 
-        <button class="hamburger-btn" id="hamburger-btn" aria-label="Abrir menú" onclick="toggleMobileMenu()">
-          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-            <line x1="3" y1="6" x2="21" y2="6"/>
-            <line x1="3" y1="12" x2="21" y2="12"/>
-            <line x1="3" y1="18" x2="21" y2="18"/>
-          </svg>
-        </button>
-      </div>
-    </div>
-  </nav>
+			<!-- Box 04: Tech Stack & Telemetry -->
+			<div class="box content-box" data-box="true" data-title="04 · TECH STACK & TELEMETRY">
+				LANGUAGES & TOOLS:<br>
+				• C / C++ · Python (Qiskit, Cirq, Qulacs) · Slurm<br>
+				• MPI · OpenMP · CUDA · Rust · Linux · Docker / Git<br>
+				<br>
+				OFFICIAL CERTIFICATIONS:<br>
+				• ADEQUATE · Quantum Networks · Quantum Computing<br>
+				• Santander Google Gemini Certified · Quantum Ecosystem
+			</div>
 
-  <!-- Menú móvil -->
-  <div class="mobile-menu" id="mobile-menu">
-    <a href="#hero" onclick="closeMobileMenu()" data-i18n="nav.about">Sobre mí</a>
-    <a href="#experience" onclick="closeMobileMenu()" data-i18n="nav.experience">Experiencia</a>
-    <a href="#projects" onclick="closeMobileMenu()" data-i18n="nav.projects">Proyectos</a>
-    <a href="#publication" onclick="closeMobileMenu()" data-i18n="nav.pub">Publicaciones</a>
-    <a href="#education" onclick="closeMobileMenu()" data-i18n="nav.education">Formación</a>
-    <a href="#skills" onclick="closeMobileMenu()" data-i18n="nav.skills">Habilidades</a>
-    <a href="#contact" onclick="closeMobileMenu()" data-i18n="nav.contact">Contacto</a>
-  </div>
+			<!-- Box 05: Networks & Profiles (Column 1, Row 3) -->
+			<div class="box content-box" data-box="true" data-title="05 · NETWORKS & PROFILES">
+				OFFICIAL PROFILES & LINKS:<br>
+				• GitHub: <a target="_blank" href="https://github.com/Cerrudoxx">github.com/Cerrudoxx</a><br>
+				• LinkedIn: <a target="_blank" href="https://linkedin.com/in/jcerrudoh">linkedin.com/in/jcerrudoh</a><br>
+				• Google Scholar: <a target="_blank" href="https://scholar.google.es/citations?user=0pVEhrYAAAAJ&hl=es">Researcher Profile & Citations</a>
+			</div>
 
-  <!-- ══════════════════════════════════════════
-       SOBRE MÍ
-       ══════════════════════════════════════════ -->
-  <header class="hero" id="hero">
-    <div class="wrap">
-      <div class="hero-main-grid">
-        
-        <div class="hero-left">
-          <span class="hero-kicker">JESÚS CERRUDO HERRERA</span>
-          <h1 class="hero-name">Ingeniero en Informática</h1>
-          <h2 class="hero-focus" data-i18n="hero.focus">
-            Técnico de I+D+i en Computación Cuántica y Supercomputación en la Fundación COMPUTAEX.
-          </h2>
-          <p class="hero-bio" data-i18n="hero.bio">
-            Graduado en Ingeniería Informática en Ingeniería de Computadores por la Universidad de Extremadura (Matrícula de Honor en el Trabajo Fin de Grado) y estudiante del Máster en Ingeniería Informática en la UNED. Mi trabajo se centra en la optimización de flujos de trabajo sobre el supercomputador Lusitania, simulación cuántica distribuida (CUNQA), algoritmos variacionales (QAOA, VQE) y modelos QUBO.
-          </p>
+			<!-- Box 06: Contact Form (Column 2, Row 3) -->
+			<div class="box content-box" data-box="true" data-title="06 · CONTACT FORM">
+				DIRECT MESSAGE DISPATCH:<br>
+				• Name    : <a href="javascript:void(0)" id="tui-name">[ Click to type name ]</a><br>
+				• Email   : <a href="javascript:void(0)" id="tui-email">[ Click to type email ]</a><br>
+				• Message : <a href="javascript:void(0)" id="tui-msg">[ Click to type message ]</a><br>
+				<br>
+				<a href="javascript:void(0)" id="tui-submit">[ > TRANSMIT MESSAGE ]</a> · <span id="tui-status">Direct to Formspree</span>
+			</div>
+		</main>
 
-          <div class="hero-actions">
-            <a href="#projects" class="btn btn-primary" data-i18n="hero.cta1">
-              Ver proyectos
-              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="9 18 15 12 9 6"/></svg>
-            </a>
-            <a href="#publication" class="btn btn-secondary" data-i18n="hero.cta2">
-              Publicaciones
-            </a>
-            <a href="#contact" class="btn btn-secondary" data-i18n="hero.cta3">
-              Contacto
-            </a>
-          </div>
-        </div>
+		<pre aria-hidden="true"></pre>
+		<input type="text" id="tui-proxy" autocomplete="off" autocapitalize="off" spellcheck="false" tabindex="-1">
+		<script src="script.js"></script>
+		<script>
+			(function() {
+				try {
+					const url = new URL(location.href);
+					const src = url.searchParams;
+					const mode = (src.get('mode') || '').toLowerCase();
+					const color = (src.get('color') || '').toLowerCase();
 
-        <!-- Tarjeta de perfil con foto -->
-        <div class="hero-right">
-          <div class="profile-card">
-            <div class="photo-frame">
-              <img src="assets/foto.jpg" alt="Jesús Cerrudo Herrera">
-              <span class="photo-caption">CÁCERES · EXTREMADURA</span>
-            </div>
-            
-            <div class="profile-details">
-              <div class="profile-loc">
-                <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
-                <span>Cáceres, España</span>
-              </div>
-              <div class="profile-links">
-                <a href="https://github.com/Cerrudoxx" target="_blank" rel="noopener" class="profile-social-link" title="GitHub">
-                  <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 .5C5.7.5.5 5.7.5 12c0 5.1 3.3 9.4 7.9 10.9.6.1.8-.2.8-.6v-2c-3.2.7-3.9-1.5-3.9-1.5-.5-1.3-1.7-1.3-1.7-1-.7.1-.7.1-.7 1.2.1 1.8 1.2 1.8 1.2 1 1.8 2.7 1.3 3.4 1 .1-.8.4-1.3.7-1.6-2.6-.3-5.3-1.3-5.3-5.7 0-1.3.5-2.3 1.2-3.1-.1-.3-.5-1.5.1-3.1 0 0 1-.3 3.3 1.2a11.5 11.5 0 0 1 6 0C17.3 4.7 18.3 5 18.3 5c.6 1.6.2 2.8.1 3.1.8.8 1.2 1.8 1.2 3.1 0 4.4-2.7 5.4-5.3 5.7.4.4.8 1.1.8 2.2v3.3c0 .4.2.7.8.6 4.6-1.5 7.9-5.8 7.9-10.9C23.5 5.7 18.3.5 12 .5z"/></svg>
-                  <span>GitHub</span>
-                </a>
-                <a href="https://linkedin.com/in/jcerrudoh" target="_blank" rel="noopener" class="profile-social-link" title="LinkedIn">
-                  <svg viewBox="0 0 24 24" fill="currentColor"><path d="M20.5 2h-17A1.5 1.5 0 002 3.5v17A1.5 1.5 0 003.5 22h17a1.5 1.5 0 001.5-1.5v-17A1.5 1.5 0 0020.5 2zM8 19H5v-9h3zM6.5 8.25A1.75 1.75 0 118.3 6.5a1.78 1.78 0 01-1.8 1.75zM19 19h-3v-4.74c0-1.42-.6-1.93-1.38-1.93A1.74 1.74 0 0013 14.19a.66.66 0 000 .14V19h-3v-9h2.9v1.3a3.11 3.11 0 012.7-1.4c1.55 0 3.36.86 3.36 3.66z"/></svg>
-                  <span>LinkedIn</span>
-                </a>
-                <a href="https://scholar.google.es/citations?user=0pVEhrYAAAAJ&hl=es" target="_blank" rel="noopener" class="profile-social-link" title="Google Scholar">
-                  <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2L1 7l11 5 9-4.09V15h2V7L12 2zM4.11 10.32v3.29c0 .77.53 1.45 1.29 1.7a8.04 8.04 0 0 0 13.2 0c.76-.25 1.29-.93 1.29-1.7v-3.29L12 13.91l-7.89-3.59z"/></svg>
-                  <span>Scholar</span>
-                </a>
-              </div>
-            </div>
-          </div>
-        </div>
+					// Boot engine with steady 3D words and smooth color cycling
+					window.boot({ word: 'jch', mode: mode, color: color });
 
-      </div>
-    </div>
-  </header>
+					// Interactive TUI Contact Form State
+					let contactData = { name: '', email: '', message: '' };
+					let activeField = null;
+					let cursorVisible = true;
+					let cursorTimer = null;
+					const proxy = document.getElementById('tui-proxy');
 
-  <!-- ══════════════════════════════════════════
-       EXPERIENCIA
-       ══════════════════════════════════════════ -->
-  <section id="experience">
-    <div class="wrap">
-      <div class="section-masthead">
-        <h2 class="section-title" data-i18n="exp.title">Experiencia</h2>
-      </div>
+					function getPlaceholder(f) {
+						if (f === 'name') return 'Click to type name';
+						if (f === 'email') return 'Click to type email';
+						if (f === 'message') return 'Click to type message';
+						return '';
+					}
 
-      <div class="timeline-matrix">
-        <!-- Puesto 1 -->
-        <div class="timeline-row">
-          <div class="timeline-meta">
-            <span class="time-period" data-i18n="exp.j1.date">Mar 2026 – Actualidad</span>
-            <span class="time-org">Fundación COMPUTAEX</span>
-            <span class="time-loc">Cáceres, España</span>
-          </div>
-          <div class="timeline-content">
-            <h3 class="time-role-title" data-i18n="exp.j1.title">Técnico de I+D+i en Supercomputación y Computación Cuántica</h3>
-            <ul class="time-bullets">
-              <li data-i18n="exp.j1.d1">Investigación en optimización de rendimiento y eficiencia energética en HPC mediante algoritmos cuánticos (QAOA, VQE) y modelos QUBO.</li>
-              <li data-i18n="exp.j1.d2">Integración, validación y benchmarking de emuladores y hardware cuántico en el supercomputador Lusitania.</li>
-              <li data-i18n="exp.j1.d3">Transferencia tecnológica y difusión mediante publicaciones en revistas científicas y congresos.</li>
-            </ul>
-          </div>
-        </div>
+					function updateDisplay() {
+						['name', 'email', 'message'].forEach(f => {
+							const id = f === 'name' ? 'tui-name' : f === 'email' ? 'tui-email' : 'tui-msg';
+							let text = '';
+							const val = contactData[f] || '';
+							if (activeField === f) {
+								const maxLen = 30;
+								const vis = val.length > maxLen ? '...' + val.slice(-(maxLen - 3)) : val;
+								text = '[ ' + vis + (cursorVisible ? '█' : ' ') + ' ]';
+							} else {
+								if (!val) {
+									text = '[ ' + getPlaceholder(f) + ' ]';
+								} else {
+									const maxLen = 32;
+									const vis = val.length > maxLen ? val.slice(0, maxLen - 3) + '...' : val;
+									text = '[ ' + vis + ' ]';
+								}
+							}
+							document.querySelectorAll('#' + id).forEach(el => el.textContent = text);
+						});
+					}
 
-        <!-- Puesto 2 -->
-        <div class="timeline-row">
-          <div class="timeline-meta">
-            <span class="time-period" data-i18n="exp.j2.date">Abr 2025 – Mar 2026</span>
-            <span class="time-org">Fundación COMPUTAEX</span>
-            <span class="time-loc">Cáceres, España</span>
-          </div>
-          <div class="timeline-content">
-            <h3 class="time-role-title" data-i18n="exp.j2.title">Becario de Investigación</h3>
-            <ul class="time-bullets">
-              <li data-i18n="exp.j2.d1">Benchmarking y análisis de escalabilidad paralela (MPI, OpenMP) de los principales simuladores cuánticos (Qiskit, Qulacs, Qibo, Cirq, IQS) en el supercomputador Lusitania.</li>
-              <li data-i18n="exp.j2.d2">Implementación del software de simulación cuántica distribuida CUNQA sobre nodos de cómputo en clúster.</li>
-            </ul>
-          </div>
-        </div>
+					function activateField(f, clickEvent) {
+						activeField = f;
+						proxy.value = contactData[f] || '';
+						if (clickEvent) {
+							proxy.style.left = clickEvent.clientX + 'px';
+							proxy.style.top = clickEvent.clientY + 'px';
+						}
+						proxy.focus();
+						cursorVisible = true;
+						updateDisplay();
+						if (cursorTimer) clearInterval(cursorTimer);
+						cursorTimer = setInterval(() => {
+							cursorVisible = !cursorVisible;
+							updateDisplay();
+						}, 500);
+					}
 
-        <!-- Puesto 3 -->
-        <div class="timeline-row">
-          <div class="timeline-meta">
-            <span class="time-period" data-i18n="exp.j3.date">Feb 2025 – Abr 2025</span>
-            <span class="time-org">Fundación COMPUTAEX</span>
-            <span class="time-loc">Cáceres, España</span>
-          </div>
-          <div class="timeline-content">
-            <h3 class="time-role-title" data-i18n="exp.j3.title">Contrato de Prácticas</h3>
-            <ul class="time-bullets">
-              <li data-i18n="exp.j3.d1">Benchmarking de simuladores cuánticos ejecutando el algoritmo de Grover en Lusitania, analizando consumo de memoria y tiempos de CPU.</li>
-              <li data-i18n="exp.j3.d2">Automatización de pruebas y generación de resultados mediante scripts en Python y Bash.</li>
-            </ul>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
+					proxy.addEventListener('input', () => {
+						if (!activeField) return;
+						contactData[activeField] = proxy.value;
+						updateDisplay();
+					});
 
-  <!-- ══════════════════════════════════════════
-       PROYECTOS
-       ══════════════════════════════════════════ -->
-  <section id="projects">
-    <div class="wrap">
-      <div class="section-masthead">
-        <h2 class="section-title" data-i18n="projects.title">Proyectos</h2>
-      </div>
+					proxy.addEventListener('keydown', (e) => {
+						if (e.key === 'Tab' || e.key === 'Enter') {
+							e.preventDefault();
+							if (activeField === 'name') activateField('email');
+							else if (activeField === 'email') activateField('message');
+							else if (activeField === 'message') {
+								activeField = null;
+								proxy.blur();
+								if (cursorTimer) clearInterval(cursorTimer);
+								updateDisplay();
+								document.querySelectorAll('#tui-status').forEach(el => el.textContent = 'Ready to transmit');
+							}
+						} else if (e.key === 'Escape') {
+							activeField = null;
+							proxy.blur();
+							if (cursorTimer) clearInterval(cursorTimer);
+							updateDisplay();
+						}
+					});
 
-      <div class="projects-grid">
-        <!-- Proyecto 1 -->
-        <div class="project-box">
-          <div>
-            <div class="project-header-row">
-              <span class="project-meta-tag">Artículos & Código</span>
-              <span class="project-badge-pill">SIMULATION · JISBD</span>
-            </div>
-            <h3 class="project-title" data-i18n="p1.title">Benchmarking de Simuladores Cuánticos en HPC</h3>
-            <p class="project-desc" data-i18n="p1.desc">
-              Evaluación comparativa del rendimiento de los principales simuladores de vectores de estado (Qiskit, Qulacs, Qibo, Pennylane, Cirq, IQS) en el supercomputador Lusitania.
-            </p>
-            <div class="project-tech-tags">
-              <span class="tech-tag">Python</span>
-              <span class="tech-tag">Qiskit</span>
-              <span class="tech-tag">Qulacs</span>
-              <span class="tech-tag">Slurm</span>
-              <span class="tech-tag">MPI</span>
-            </div>
-          </div>
-          <div class="project-footer-row">
-            <a href="https://github.com/Cerrudoxx/ComputaexQuantumBenchmark" target="_blank" rel="noopener" class="link-btn">
-              <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 .5C5.7.5.5 5.7.5 12c0 5.1 3.3 9.4 7.9 10.9.6.1.8-.2.8-.6v-2c-3.2.7-3.9-1.5-3.9-1.5-.5-1.3-1.7-1.3-1.7-1-.7.1-.7.1-.7 1.2.1 1.8 1.2 1.8 1.2 1 1.8 2.7 1.3 3.4 1 .1-.8.4-1.3.7-1.6-2.6-.3-5.3-1.3-5.3-5.7 0-1.3.5-2.3 1.2-3.1-.1-.3-.5-1.5.1-3.1 0 0 1-.3 3.3 1.2a11.5 11.5 0 0 1 6 0C17.3 4.7 18.3 5 18.3 5c.6 1.6.2 2.8.1 3.1.8.8 1.2 1.8 1.2 3.1 0 4.4-2.7 5.4-5.3 5.7.4.4.8 1.1.8 2.2v3.3c0 .4.2.7.8.6 4.6-1.5 7.9-5.8 7.9-10.9C23.5 5.7 18.3.5 12 .5z"/></svg>
-              <span data-i18n="btn.code">GitHub</span>
-            </a>
-            <a href="#publication" class="link-btn" style="color: var(--accent-vermilion);">
-              <span data-i18n="btn.paper">Ver publicaciones</span> →
-            </a>
-          </div>
-        </div>
+					proxy.addEventListener('blur', () => {
+						setTimeout(() => {
+							if (document.activeElement !== proxy) {
+								activeField = null;
+								if (cursorTimer) clearInterval(cursorTimer);
+								updateDisplay();
+							}
+						}, 120);
+					});
 
-        <!-- Proyecto 2 -->
-        <div class="project-box">
-          <div>
-            <div class="project-header-row">
-              <span class="project-meta-tag">Simulación distribuida</span>
-              <span class="project-badge-pill">CUNQA</span>
-            </div>
-            <h3 class="project-title" data-i18n="p2.title">DEGGA Agnóstico al Entrelazamiento</h3>
-            <p class="project-desc" data-i18n="p2.desc">
-              Implementación en el supercomputador Lusitania del algoritmo cuántico distribuido DEGGA utilizando CUNQA para búsquedas exactas multinodo preservando el entrelazamiento.
-            </p>
-            <div class="project-tech-tags">
-              <span class="tech-tag">CUNQA</span>
-              <span class="tech-tag">DEGGA</span>
-              <span class="tech-tag">Grover</span>
-              <span class="tech-tag">HPC</span>
-            </div>
-          </div>
-          <div class="project-footer-row">
-            <a href="https://github.com/Cerrudoxx/Entanglement-Agnostic-DEGGA" target="_blank" rel="noopener" class="link-btn">
-              <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 .5C5.7.5.5 5.7.5 12c0 5.1 3.3 9.4 7.9 10.9.6.1.8-.2.8-.6v-2c-3.2.7-3.9-1.5-3.9-1.5-.5-1.3-1.7-1.3-1.7-1-.7.1-.7.1-.7 1.2.1 1.8 1.2 1.8 1.2 1 1.8 2.7 1.3 3.4 1 .1-.8.4-1.3.7-1.6-2.6-.3-5.3-1.3-5.3-5.7 0-1.3.5-2.3 1.2-3.1-.1-.3-.5-1.5.1-3.1 0 0 1-.3 3.3 1.2a11.5 11.5 0 0 1 6 0C17.3 4.7 18.3 5 18.3 5c.6 1.6.2 2.8.1 3.1.8.8 1.2 1.8 1.2 3.1 0 4.4-2.7 5.4-5.3 5.7.4.4.8 1.1.8 2.2v3.3c0 .4.2.7.8.6 4.6-1.5 7.9-5.8 7.9-10.9C23.5 5.7 18.3.5 12 .5z"/></svg>
-              <span data-i18n="btn.code">GitHub</span>
-            </a>
-            <span class="tech-tag" style="border: none; background: transparent; color: var(--text-muted);">Lusitania</span>
-          </div>
-        </div>
+					async function transmitForm() {
+						if (!contactData.name || !contactData.name.trim()) {
+							document.querySelectorAll('#tui-status').forEach(el => el.textContent = '[ERR: Name required]');
+							activateField('name');
+							return;
+						}
+						if (!contactData.email || !contactData.email.trim() || !contactData.email.includes('@')) {
+							document.querySelectorAll('#tui-status').forEach(el => el.textContent = '[ERR: Valid email needed]');
+							activateField('email');
+							return;
+						}
+						if (!contactData.message || !contactData.message.trim()) {
+							document.querySelectorAll('#tui-status').forEach(el => el.textContent = '[ERR: Message required]');
+							activateField('message');
+							return;
+						}
 
-        <!-- Proyecto 3 -->
-        <div class="project-box">
-          <div>
-            <div class="project-header-row">
-              <span class="project-meta-tag">TFG · Matrícula de Honor</span>
-              <span class="project-badge-pill" style="color: var(--status-emerald);">10 / 10</span>
-            </div>
-            <h3 class="project-title" data-i18n="p3.title">Evaluación de Simuladores Cuánticos en Lusitania</h3>
-            <p class="project-desc" data-i18n="p3.desc">
-              Trabajo Fin de Grado en Ingeniería de Computadores calificado con Matrícula de Honor (10/10). Análisis de consumo de memoria y escalabilidad paralela en supercomputación.
-            </p>
-            <div class="project-tech-tags">
-              <span class="tech-tag">Statevector</span>
-              <span class="tech-tag">Memoria</span>
-              <span class="tech-tag">Lusitania III</span>
-              <span class="tech-tag">Benchmarking</span>
-            </div>
-          </div>
-          <div class="project-footer-row">
-            <span class="link-btn" style="color: var(--status-emerald);">
-              ★ 10 / Matrícula de Honor
-            </span>
-            <span style="font-family: var(--font-mono); font-size: 11px; color: var(--text-muted);">UEx</span>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
+						const sendingData = { ...contactData };
+						activeField = null;
+						proxy.blur();
+						if (cursorTimer) clearInterval(cursorTimer);
+						updateDisplay();
 
-  <!-- ══════════════════════════════════════════
-       PUBLICACIONES
-       ══════════════════════════════════════════ -->
-  <section id="publication">
-    <div class="wrap">
-      <div class="section-masthead">
-        <h2 class="section-title" data-i18n="pub.title">Publicaciones</h2>
-      </div>
+						document.querySelectorAll('#tui-status').forEach(el => el.textContent = '[Transmitting to Formspree...]');
+						document.querySelectorAll('#tui-submit').forEach(el => el.textContent = '[ TRANSMITTING... ]');
 
-      <div class="pub-stack">
-        <!-- Publicación 1: JISBD 2026 -->
-        <div class="pub-monograph-card">
-          <div class="pub-main-info">
-            <span class="pub-journal-flag">Actas JISBD 2026 · Sistedes (Alicante)</span>
-            <h3 class="pub-paper-title">
-              Benchmarking de Simuladores Cuánticos de Vector de Estado en HPC
-            </h3>
-            <p class="pub-authors">
-              <strong>Cerrudo Herrera, Jesús</strong>; Ziabat Ziabat, Ahmed; Polo Alcántara, Pablo; Rico Gallego, Juan Antonio
-            </p>
-            <p class="pub-meta-line">
-              Actas de las XXX Jornadas de Ingeniería del Software y Bases de Datos (16 de junio de 2026) · Ed. C. Cetina
-            </p>
-            <div class="pub-keywords">
-              <span class="pub-keyword-tag">Computación Cuántica</span>
-              <span class="pub-keyword-tag">Benchmarking de Simuladores</span>
-              <span class="pub-keyword-tag">Simulador de Vector de Estado</span>
-              <span class="pub-keyword-tag">Algoritmo de Grover</span>
-              <span class="pub-keyword-tag">Quantum Volume</span>
-              <span class="pub-keyword-tag">Transformada Cuántica de Fourier</span>
-            </div>
-          </div>
+						// 1. Create and submit native form (synchronously inside user gesture to bypass popup blockers and handle Formspree reCAPTCHA)
+						const form = document.createElement('form');
+						form.action = 'https://formspree.io/f/mojzvvep';
+						form.method = 'POST';
+						form.target = '_blank';
+						
+						const nameInput = document.createElement('input');
+						nameInput.type = 'hidden';
+						nameInput.name = 'name';
+						nameInput.value = sendingData.name;
+						form.appendChild(nameInput);
 
-          <div class="pub-action-side">
-            <div class="pub-spec-row">
-              <span class="pub-spec-label">Enlace permanente</span>
-              <a href="https://hdl.handle.net/11705/JISBD/2026/104" target="_blank" rel="noopener" class="pub-spec-val" style="color: var(--accent-vermilion); font-weight: 600;">
-                hdl.handle.net/11705/JISBD/2026/104
-              </a>
-            </div>
+						const emailInput = document.createElement('input');
+						emailInput.type = 'hidden';
+						emailInput.name = 'email';
+						emailInput.value = sendingData.email;
+						form.appendChild(emailInput);
 
-            <div class="pub-spec-row">
-              <span class="pub-spec-label">Archivo PDF</span>
-              <span class="pub-spec-val">11705-JISBD-2026-104.pdf (499 KB)</span>
-            </div>
+						const msgInput = document.createElement('input');
+						msgInput.type = 'hidden';
+						msgInput.name = 'message';
+						msgInput.value = sendingData.message;
+						form.appendChild(msgInput);
 
-            <div class="pub-spec-row">
-              <span class="pub-spec-label">Licencia</span>
-              <span class="pub-spec-val">CC BY-NC-ND 4.0</span>
-            </div>
+						document.body.appendChild(form);
+						form.submit();
+						setTimeout(() => form.remove(), 1000);
 
-            <div class="pub-btn-stack">
-              <a href="https://hdl.handle.net/11705/JISBD/2026/104" target="_blank" rel="noopener" class="btn btn-primary" style="justify-content: center; font-size: 12px;">
-                Ver en Sistedes
-                <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="9 18 15 12 9 6"/></svg>
-              </a>
-              <button onclick="copyBibtexCitation('jisbd', this)" class="btn btn-secondary" id="btn-bibtex-jisbd" style="justify-content: center; font-size: 11px; font-family: var(--font-mono);">
-                Copiar BibTeX
-              </button>
-            </div>
-          </div>
-        </div>
+						// 2. Feedback in TUI interface
+						document.querySelectorAll('#tui-status').forEach(el => el.textContent = '[SENT - Verify tab]');
+						document.querySelectorAll('#tui-submit').forEach(el => el.textContent = '[ DELIVERED ✓ ]');
+						contactData = { name: '', email: '', message: '' };
 
-        <!-- Publicación 2: SIMULATION (SAGE) -->
-        <div class="pub-monograph-card">
-          <div class="pub-main-info">
-            <span class="pub-journal-flag">Revista SIMULATION (SAGE Publications · 2026)</span>
-            <h3 class="pub-paper-title">
-              Benchmarking quantum computing statevector simulators on high-performance computing
-            </h3>
-            <p class="pub-authors">
-              <strong>Jesús Cerrudo-Herrera</strong>, Daniel Talaván-Vega, Paloma Rodríguez-Oliver, Ahmed Ziabat-Ziabat, Juan Antonio Rico-Gallego
-            </p>
-            <p class="pub-meta-line">
-              SIMULATION, Vol. 102, Núm. 7, págs. 493–507 (2026) · JCR
-            </p>
-            <div class="pub-keywords">
-              <span class="pub-keyword-tag">Quantum Computing</span>
-              <span class="pub-keyword-tag">Statevector Simulators</span>
-              <span class="pub-keyword-tag">HPC Benchmarking</span>
-              <span class="pub-keyword-tag">Grover's Algorithm</span>
-              <span class="pub-keyword-tag">Quantum Volume</span>
-              <span class="pub-keyword-tag">QFT</span>
-            </div>
-          </div>
+						setTimeout(() => {
+							updateDisplay();
+							document.querySelectorAll('#tui-submit').forEach(el => el.textContent = '[ > TRANSMIT MESSAGE ]');
+							document.querySelectorAll('#tui-status').forEach(el => el.textContent = 'Direct to Formspree');
+						}, 4000);
+					}
 
-          <div class="pub-action-side">
-            <div class="pub-spec-row">
-              <span class="pub-spec-label">DOI</span>
-              <a href="https://doi.org/10.1177/00375497261438515" target="_blank" rel="noopener" class="pub-spec-val" style="color: var(--accent-vermilion); font-weight: 600;">
-                10.1177/00375497261438515
-              </a>
-            </div>
+					let lastActionTime = 0;
+					function handleInteraction(e) {
+						if (Date.now() - lastActionTime < 100) return;
+						let a = e.target.closest('a');
+						if (!a) {
+							const line = e.target.closest('span[style*="display: block"]') || e.target.parentElement;
+							if (line) a = line.querySelector('a[id^="tui-"]');
+						}
+						if (!a || !a.id || !a.id.startsWith('tui-')) return;
+						lastActionTime = Date.now();
 
-            <div class="pub-btn-stack">
-              <a href="https://doi.org/10.1177/00375497261438515" target="_blank" rel="noopener" class="btn btn-primary" style="justify-content: center; font-size: 12px;">
-                Ver en SAGE
-                <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="9 18 15 12 9 6"/></svg>
-              </a>
-              
-              <a href="https://scholar.google.es/citations?user=0pVEhrYAAAAJ&hl=es" target="_blank" rel="noopener" class="btn btn-secondary" style="justify-content: center; font-size: 12px;">
-                Google Scholar
-              </a>
+						if (a.id === 'tui-name') {
+							e.preventDefault();
+							activateField('name', e);
+						} else if (a.id === 'tui-email') {
+							e.preventDefault();
+							activateField('email', e);
+						} else if (a.id === 'tui-msg') {
+							e.preventDefault();
+							activateField('message', e);
+						} else if (a.id === 'tui-submit') {
+							e.preventDefault();
+							transmitForm();
+						}
+					}
 
-              <button onclick="copyBibtexCitation('simulation', this)" class="btn btn-secondary" id="btn-bibtex-simulation" style="justify-content: center; font-size: 11px; font-family: var(--font-mono);">
-                Copiar BibTeX
-              </button>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- ══════════════════════════════════════════
-       FORMACIÓN & CURSOS
-       ══════════════════════════════════════════ -->
-  <section id="education">
-    <div class="wrap">
-      
-      <!-- Estudios universitarios -->
-      <div class="section-masthead">
-        <h2 class="section-title" data-i18n="edu.title">Formación</h2>
-      </div>
-
-      <div class="edu-matrix" style="margin-bottom: 40px;">
-        <div class="edu-card">
-          <div>
-            <span class="edu-date" data-i18n="edu.e1.date">Oct 2025 – Actualidad</span>
-            <h3 class="edu-title" data-i18n="edu.e1.title">Máster Universitario en Ingeniería Informática</h3>
-            <span class="edu-inst" data-i18n="edu.e1.inst">Universidad Nacional de Educación a Distancia (UNED)</span>
-          </div>
-          <p class="edu-desc" data-i18n="edu.e1.desc">
-            Sistemas distribuidos, algoritmos avanzados y computación de alto rendimiento.
-          </p>
-        </div>
-
-        <div class="edu-card">
-          <div>
-            <span class="edu-date" data-i18n="edu.e2.date">Sept 2021 – Jul 2025</span>
-            <h3 class="edu-title" data-i18n="edu.e2.title">Grado en Ingeniería Informática en Ingeniería de Computadores</h3>
-            <span class="edu-inst" data-i18n="edu.e2.inst">Universidad de Extremadura</span>
-          </div>
-          <p class="edu-desc" data-i18n="edu.e2.desc">
-            Arquitectura de computadores, computación paralela y gestión de sistemas.
-          </p>
-          <span class="edu-grade-tag">★ Calificación: 10 / Matrícula de Honor</span>
-        </div>
-      </div>
-
-      <!-- Cursos y Certificaciones -->
-      <div class="section-masthead">
-        <h2 class="section-title" data-i18n="cert.title">Cursos y Certificaciones</h2>
-      </div>
-
-      <div class="certs-grid">
-        <!-- Curso 1 -->
-        <div class="cert-card">
-          <div class="cert-header">
-            <span class="cert-issuer">QURECA</span>
-            <span class="cert-date">Jul. 2026</span>
-          </div>
-          <h4 class="cert-name">ADEQUATE</h4>
-          <div class="cert-cred-row">
-            <span class="cert-id-label">ID Credencial</span>
-            <code class="cert-id-val">6850-178-480-9354</code>
-          </div>
-        </div>
-
-        <!-- Curso 2 -->
-        <div class="cert-card">
-          <div class="cert-header">
-            <span class="cert-issuer">QURECA</span>
-            <span class="cert-date">Jul. 2026</span>
-          </div>
-          <h4 class="cert-name">Quantum Communication and Quantum Networks</h4>
-          <div class="cert-cred-row">
-            <span class="cert-id-label">ID Credencial</span>
-            <code class="cert-id-val">6850-178-479-0929</code>
-          </div>
-        </div>
-
-        <!-- Curso 3 -->
-        <div class="cert-card">
-          <div class="cert-header">
-            <span class="cert-issuer">QPlayLearn</span>
-            <span class="cert-date">Jul. 2026</span>
-          </div>
-          <h4 class="cert-name">Quantum Computing</h4>
-          <div class="cert-cred-row">
-            <span class="cert-id-label">Emisor</span>
-            <span class="cert-id-val">QPlayLearn</span>
-          </div>
-        </div>
-
-        <!-- Curso 4 -->
-        <div class="cert-card">
-          <div class="cert-header">
-            <span class="cert-issuer">Santander Open Academy</span>
-            <span class="cert-date">May. 2026</span>
-          </div>
-          <h4 class="cert-name">Curso de uso de Google Gemini</h4>
-          <div class="cert-cred-row">
-            <span class="cert-id-label">ID Credencial</span>
-            <code class="cert-id-val">OA-2026-0520002645077</code>
-          </div>
-        </div>
-
-        <!-- Curso 5 -->
-        <div class="cert-card">
-          <div class="cert-header">
-            <span class="cert-issuer">QURECA</span>
-            <span class="cert-date">Jul. 2026</span>
-          </div>
-          <h4 class="cert-name">Quantum Myths</h4>
-          <div class="cert-cred-row">
-            <span class="cert-id-label">ID Credencial</span>
-            <code class="cert-id-val">6850-178-479-1461</code>
-          </div>
-        </div>
-
-        <!-- Curso 6 -->
-        <div class="cert-card">
-          <div class="cert-header">
-            <span class="cert-issuer">QURECA</span>
-            <span class="cert-date">Jul. 2026</span>
-          </div>
-          <h4 class="cert-name">Why is quantum so special? Basic rules of quantum physics</h4>
-          <div class="cert-cred-row">
-            <span class="cert-id-label">ID Credencial</span>
-            <code class="cert-id-val">6850-178-471-9943</code>
-          </div>
-        </div>
-
-        <!-- Curso 7 -->
-        <div class="cert-card">
-          <div class="cert-header">
-            <span class="cert-issuer">QURECA</span>
-            <span class="cert-date">Jul. 2026</span>
-          </div>
-          <h4 class="cert-name">Introduction to The Quantum Ecosystem</h4>
-          <div class="cert-cred-row">
-            <span class="cert-id-label">ID Credencial</span>
-            <code class="cert-id-val">6850-178-471-9212</code>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- ══════════════════════════════════════════
-       HABILIDADES (CON LOGOS)
-       ══════════════════════════════════════════ -->
-  <section id="skills">
-    <div class="wrap">
-      <div class="section-masthead">
-        <h2 class="section-title" data-i18n="skills.title">Habilidades</h2>
-      </div>
-
-      <div class="skills-grid">
-        
-        <!-- Categoría 1: Lenguajes -->
-        <div class="skill-category-card">
-          <div class="cat-header">
-            <h3 class="cat-title" data-i18n="skills.c1">Lenguajes</h3>
-          </div>
-          <div class="cat-tags">
-            <span class="skill-badge">C</span>
-            <span class="skill-badge">C++</span>
-            <span class="skill-badge">Python</span>
-            <span class="skill-badge">Rust</span>
-            <span class="skill-badge">Ensamblador x86</span>
-            <span class="skill-badge">Java</span>
-            <span class="skill-badge">Bash</span>
-            <span class="skill-badge">VHDL</span>
-            <span class="skill-badge">SQL</span>
-            <span class="skill-badge">LaTeX</span>
-          </div>
-        </div>
-
-        <!-- Categoría 2: Computación Cuántica -->
-        <div class="skill-category-card">
-          <div class="cat-header">
-            <h3 class="cat-title" data-i18n="skills.c2">Computación Cuántica</h3>
-          </div>
-          <div class="cat-tags">
-            <span class="skill-badge">Qiskit</span>
-            <span class="skill-badge">Qulacs</span>
-            <span class="skill-badge">Pennylane</span>
-            <span class="skill-badge">Qibo</span>
-            <span class="skill-badge">Cirq</span>
-            <span class="skill-badge">Intel QS</span>
-            <span class="skill-badge">CUNQA</span>
-            <span class="skill-badge">QAOA / VQE</span>
-            <span class="skill-badge">Modelos QUBO</span>
-          </div>
-        </div>
-
-        <!-- Categoría 3: HPC & Paralelismo -->
-        <div class="skill-category-card">
-          <div class="cat-header">
-            <h3 class="cat-title" data-i18n="skills.c3">HPC & Paralelismo</h3>
-          </div>
-          <div class="cat-tags">
-            <span class="skill-badge">Slurm</span>
-            <span class="skill-badge">OpenMPI</span>
-            <span class="skill-badge">OpenMP</span>
-            <span class="skill-badge">CUDA</span>
-            <span class="skill-badge">SIMD (AVX2)</span>
-          </div>
-        </div>
-
-        <!-- Categoría 4: Sistemas & DevOps -->
-        <div class="skill-category-card">
-          <div class="cat-header">
-            <h3 class="cat-title" data-i18n="skills.c5">Sistemas & DevOps</h3>
-          </div>
-          <div class="cat-tags">
-            <span class="skill-badge">Linux (Debian/Ubuntu)</span>
-            <span class="skill-badge">Docker</span>
-            <span class="skill-badge">Kubernetes</span>
-            <span class="skill-badge">Git / GitHub</span>
-          </div>
-        </div>
-
-      </div>
-    </div>
-  </section>
-
-  <!-- ══════════════════════════════════════════
-       CONTACTO
-       ══════════════════════════════════════════ -->
-  <section id="contact">
-    <div class="wrap">
-      <div class="section-masthead">
-        <h2 class="section-title" data-i18n="contact.title">Contacto</h2>
-      </div>
-
-      <div class="contact-layout">
-        <!-- Canales directos -->
-        <div class="contact-direct-channels">
-          <a href="https://linkedin.com/in/jcerrudoh" target="_blank" rel="noopener" class="contact-channel-item">
-            <div class="channel-icon">
-              <svg viewBox="0 0 24 24" fill="currentColor"><path d="M20.5 2h-17A1.5 1.5 0 002 3.5v17A1.5 1.5 0 003.5 22h17a1.5 1.5 0 001.5-1.5v-17A1.5 1.5 0 0020.5 2zM8 19H5v-9h3zM6.5 8.25A1.75 1.75 0 118.3 6.5a1.78 1.78 0 01-1.8 1.75zM19 19h-3v-4.74c0-1.42-.6-1.93-1.38-1.93A1.74 1.74 0 0013 14.19a.66.66 0 000 .14V19h-3v-9h2.9v1.3a3.11 3.11 0 012.7-1.4c1.55 0 3.36.86 3.36 3.66z"/></svg>
-            </div>
-            <div class="channel-content">
-              <span class="channel-label">LinkedIn</span>
-              <span class="channel-val">linkedin.com/in/jcerrudoh</span>
-            </div>
-          </a>
-
-          <a href="https://github.com/Cerrudoxx" target="_blank" rel="noopener" class="contact-channel-item">
-            <div class="channel-icon">
-              <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 .5C5.7.5.5 5.7.5 12c0 5.1 3.3 9.4 7.9 10.9.6.1.8-.2.8-.6v-2c-3.2.7-3.9-1.5-3.9-1.5-.5-1.3-1.7-1.3-1.7-1-.7.1-.7.1-.7 1.2.1 1.8 1.2 1.8 1.2 1 1.8 2.7 1.3 3.4 1 .1-.8.4-1.3.7-1.6-2.6-.3-5.3-1.3-5.3-5.7 0-1.3.5-2.3 1.2-3.1-.1-.3-.5-1.5.1-3.1 0 0 1-.3 3.3 1.2a11.5 11.5 0 0 1 6 0C17.3 4.7 18.3 5 18.3 5c.6 1.6.2 2.8.1 3.1.8.8 1.2 1.8 1.2 3.1 0 4.4-2.7 5.4-5.3 5.7.4.4.8 1.1.8 2.2v3.3c0 .4.2.7.8.6 4.6-1.5 7.9-5.8 7.9-10.9C23.5 5.7 18.3.5 12 .5z"/></svg>
-            </div>
-            <div class="channel-content">
-              <span class="channel-label">GitHub</span>
-              <span class="channel-val">github.com/Cerrudoxx</span>
-            </div>
-          </a>
-
-          <a href="https://scholar.google.es/citations?user=0pVEhrYAAAAJ&hl=es" target="_blank" rel="noopener" class="contact-channel-item">
-            <div class="channel-icon">
-              <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2L1 7l11 5 9-4.09V15h2V7L12 2zM4.11 10.32v3.29c0 .77.53 1.45 1.29 1.7a8.04 8.04 0 0 0 13.2 0c.76-.25 1.29-.93 1.29-1.7v-3.29L12 13.91l-7.89-3.59z"/></svg>
-            </div>
-            <div class="channel-content">
-              <span class="channel-label">Google Scholar</span>
-              <span class="channel-val">Jesús Cerrudo Herrera</span>
-            </div>
-          </a>
-
-          <div class="contact-channel-item">
-            <div class="channel-icon">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
-            </div>
-            <div class="channel-content">
-              <span class="channel-label">Ubicación</span>
-              <span class="channel-val">Cáceres, Extremadura, España</span>
-            </div>
-          </div>
-        </div>
-
-        <!-- Formulario -->
-        <div class="contact-form-panel">
-          <h3 class="form-header" data-i18n="contact.form.header">Envíame un mensaje</h3>
-          <form class="form-grid" id="contact-form" action="https://formspree.io/f/mojzvvep" method="POST">
-            <div class="form-field">
-              <label for="form-name" data-i18n="contact.form.name">Nombre</label>
-              <input type="text" id="form-name" name="name" required placeholder="Tu nombre" autocomplete="name">
-            </div>
-            <div class="form-field">
-              <label for="form-email" data-i18n="contact.form.email">Email</label>
-              <input type="email" id="form-email" name="email" required placeholder="tu-email@correo.com" autocomplete="email">
-            </div>
-            <div class="form-field">
-              <label for="form-message" data-i18n="contact.form.msg">Mensaje</label>
-              <textarea id="form-message" name="message" rows="4" required placeholder="Escribe tu mensaje..."></textarea>
-            </div>
-            <button type="submit" class="btn btn-accent" style="justify-content: center; padding: 12px;" data-i18n="contact.form.submit">
-              Enviar mensaje
-            </button>
-          </form>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- ══════════════════════════════════════════
-       PIE DE PÁGINA
-       ══════════════════════════════════════════ -->
-  <footer>
-    <div class="wrap footer-layout">
-      <div class="footer-copy">
-        <span>© 2026 JESÚS CERRUDO HERRERA.</span>
-        <span data-i18n="footer.rights">TODOS LOS DERECHOS RESERVADOS.</span>
-      </div>
-      <div class="footer-links">
-        <a href="https://github.com/Cerrudoxx" target="_blank" rel="noopener">GITHUB</a>
-        <a href="https://linkedin.com/in/jcerrudoh" target="_blank" rel="noopener">LINKEDIN</a>
-        <a href="https://scholar.google.es/citations?user=0pVEhrYAAAAJ&hl=es" target="_blank" rel="noopener">GOOGLE SCHOLAR</a>
-        <a href="https://doi.org/10.1177/00375497261438515" target="_blank" rel="noopener">SIMULATION DOI</a>
-        <a href="https://hdl.handle.net/11705/JISBD/2026/104" target="_blank" rel="noopener">JISBD 2026</a>
-      </div>
-    </div>
-  </footer>
-
-  <!-- Botón subir arriba -->
-  <button class="scroll-top" id="scroll-top" aria-label="Volver arriba" onclick="window.scrollTo({top:0,behavior:'smooth'})">
-    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="18 15 12 9 6 15"/></svg>
-  </button>
-
-  <script src="script.js"></script>
-</body>
+					document.addEventListener('pointerdown', handleInteraction, true);
+					document.addEventListener('mousedown', handleInteraction, true);
+				} catch (err) {
+					console.error("Boot error:", err);
+				}
+			})();
+		</script>
+	</body>
 </html>
